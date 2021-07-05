@@ -14,7 +14,7 @@
     $curl = curl_init();
 
     curl_setopt_array($curl, [
-      CURLOPT_URL => "https://api-football-v1.p.rapidapi.com/v3/teams?name=Palmeiras",
+      CURLOPT_URL => "https://api-football-v1.p.rapidapi.com/v3/teams?name=Corinthians",
       CURLOPT_CUSTOMREQUEST => "GET",
       CURLOPT_HTTPHEADER => [
         "x-rapidapi-host: api-football-v1.p.rapidapi.com",
@@ -30,6 +30,7 @@
     $err = curl_error($curl);
     
     $datasearch = json_decode($response, true);
+    $logo = $datasearch["response"]["0"]["team"]["logo"];
     $nome = $datasearch["parameters"]["name"];
     curl_close($curl);
     
@@ -46,7 +47,15 @@
   </header>
 
   <div class="banner">
+    <img class="logo" id="logo" src="<?php echo $logo; ?>" alt="Logo do <?php echo $nome; ?>">
     <h1><?php echo $nome; ?></h1>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script src="assets/scripts/teams.js"></script>
 </body>
 </html>

@@ -77,9 +77,14 @@ header#main-header div.side button {
 div.banner {
   height: 380px;
   width: 100%;
-  background: #3BB9E3;
+  background: #096333;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFF;
+}
+
+div.banner .logo {
+	height: 50px;
+	margin-right: 10px;
 }
