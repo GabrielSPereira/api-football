@@ -75,16 +75,31 @@ header#main-header div.side button {
 }
 
 div.banner {
-  height: 380px;
+  height: 280px;
   width: 100%;
   background: #096333;
   display: flex;
+  align-items: center;
+  justify-content: center;
+	flex-direction: column;
+  color: #FFF;
+}
+
+div.banner .banner-row {
+  display: flex;
+	flex-direction: row;
   align-items: center;
   justify-content: center;
   color: #FFF;
 }
 
 div.banner .logo {
-	height: 50px;
+	height: 40px;
 	margin-right: 10px;
+}
+
+div.banner .logoCountry {
+	height: 10px;
+	margin-right: 4px;
+	border-radius: 5px;
 }
